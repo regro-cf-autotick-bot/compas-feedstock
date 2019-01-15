@@ -18,7 +18,8 @@ build:
   skip: True   # [osx]
   number: 0
   script:
-    - {{ PYTHON }} -m pip install --upgrade pip  # [not osx]
+    - pip install -U pip setuptools virtualenv   # [linux]
+    - {{ PYTHON }} -m pip install --upgrade pip  # [win]
     - {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
 
 requirements:
