@@ -14,8 +14,11 @@ source:
   '{{ hash_type }}': '{{ hash_value }}'
 
 build:
+  skip: True  # [win]
+  skip: True  # [osx]
   number: 0
   script:
+    - "pip install --upgrade pip"                  # [linux]
     - "{{ PYTHON }} -m pip install --upgrade pip"  # [win]
     - "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
