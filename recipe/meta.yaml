@@ -15,7 +15,9 @@ source:
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script:
+    "{{ PYTHON }} -m pip install --upgrade pip";
+    "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv";
 
 requirements:
   host:
@@ -24,13 +26,11 @@ requirements:
     - setuptools
   run:
     - python
-    - cython
     - matplotlib
     - networkx
     - numba
     - numpy
     - pillow
-    - planarity
     - scipy
     - sympy
 
