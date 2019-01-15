@@ -14,8 +14,7 @@ source:
   {{ hash_type }} : {{ hash_value }}
 
 build:
-  skip: True   # [win]
-  skip: True   # [osx]
+  skip: True   # [linux and py27]
   number: 0
   script:
     - {{ PYTHON }} -m pip install --upgrade pip  # [win]
