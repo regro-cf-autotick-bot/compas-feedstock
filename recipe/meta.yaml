@@ -1,8 +1,8 @@
 {% set name = "COMPAS" %}
-{% set version = "0.3.6" %}
+{% set version = "0.4.0" %}
 {% set file_ext = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash_value = "fb47cd663ad76269eaa36f70f26875f444ad896f0eecda6e963e23845ed0476e" %}
+{% set hash_value = "4765c5f49eb4c8cfbfe87609c8797313c3b8259728ae5f7b224a4827d9640372" %}
 
 package:
   name: '{{ name|lower }}'
@@ -14,7 +14,7 @@ source:
   '{{ hash_type }}': '{{ hash_value }}'
 
 build:
-  number: 1000
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
@@ -24,11 +24,13 @@ requirements:
     - setuptools
   run:
     - python
+    - cython
     - matplotlib
     - networkx
     - numba
     - numpy
     - pillow
+    - planarity
     - scipy
     - sympy
 
