@@ -15,7 +15,10 @@ source:
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script:
+    - pip install --upgrade pip                    # [not win]
+    - "{{ PYTHON }} -m pip install --upgrade pip"  # [win]
+    - "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
   host:
