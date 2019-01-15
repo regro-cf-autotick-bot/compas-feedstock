@@ -5,22 +5,21 @@
 {% set hash_value = "4765c5f49eb4c8cfbfe87609c8797313c3b8259728ae5f7b224a4827d9640372" %}
 
 package:
-  name: '{{ name|lower }}'
-  version: '{{ version }}'
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  fn: '{{ name }}-{{ version }}.{{ file_ext }}'
+  fn: {{ name }}-{{ version }}.{{ file_ext }}
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ file_ext }}
-  '{{ hash_type }}': '{{ hash_value }}'
+  {{ hash_type }} : {{ hash_value }}
 
 build:
-  skip: True  # [win]
-  skip: True  # [osx]
+  skip: True   # [win]
+  skip: True   # [osx]
   number: 0
   script:
-    - "pip install --upgrade pip"                  # [linux]
-    - "{{ PYTHON }} -m pip install --upgrade pip"  # [win]
-    - "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+    - {{ PYTHON }} -m pip install --upgrade pip  # [not osx]
+    - {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
 
 requirements:
   host:
@@ -28,12 +27,14 @@ requirements:
     - pip
     - setuptools
   run:
+    - cython      # [not win]
     - python
     - matplotlib
     - networkx
     - numba
     - numpy
     - pillow
+    - planarity   # [not win]
     - scipy
     - sympy
 
