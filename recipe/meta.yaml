@@ -28,8 +28,8 @@ requirements:
   run:
     - cython
     - python
-    - matplotlib >=2.0      # [not py2k]
-    - matplotlib >=2.0,<3.0 # [py2k]
+    - matplotlib >=2.0  # [not py2k]
+    - matplotlib >=2.0,<3.0  # [py2k]
     - networkx
     - numba
     - numpy
