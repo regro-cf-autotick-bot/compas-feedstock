@@ -15,7 +15,7 @@ source:
 
 build:
   skip: True   # [linux and py27]
-  number: 0
+  number: 1
   script:
     - {{ PYTHON }} -m pip install --upgrade pip  # [win]
     - {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
@@ -26,14 +26,14 @@ requirements:
     - pip
     - setuptools
   run:
-    - cython      # [not win]
+    - cython
     - python
     - matplotlib >=2.0
     - networkx
     - numba
     - numpy
     - pillow
-    - planarity   # [not win]
+    - python-planarity
     - scipy
     - sympy
 
