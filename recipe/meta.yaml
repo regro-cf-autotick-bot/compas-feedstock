@@ -35,6 +35,7 @@ requirements:
     - python-planarity
     - scipy >=1.2
     - sympy
+    - xorg-libxext  # [linux and py27]
 
 test:
   imports:
