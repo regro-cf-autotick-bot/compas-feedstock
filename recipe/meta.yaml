@@ -15,7 +15,7 @@ source:
 
 build:
   skip: True   # [linux and py27]
-  number: 0
+  number: 1
   script:
     - {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
 
@@ -27,14 +27,14 @@ requirements:
   run:
     - cython
     - python
-    - matplotlib >=2.0  # [not py2k]
-    - matplotlib >=2.0,<3.0  # [py2k]
+    - matplotlib >=2.2,<3.0  # [py2k]
+    - matplotlib >=2.2  # [not py2k]
     - networkx
     - numba
-    - numpy
+    - numpy >=1.16
     - pillow
     - python-planarity
-    - scipy
+    - scipy >=1.2
     - sympy
 
 test:
