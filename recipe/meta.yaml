@@ -27,7 +27,7 @@ requirements:
     - cython
     - python
     - matplotlib >=2.2,<3.0  # [py2k]
-    - matplotlib >=2.2  # [not py2k]
+    - matplotlib >=2.2       # [not py2k]
     - networkx
     - numba
     - numpy >=1.16
@@ -35,7 +35,7 @@ requirements:
     - python-planarity
     - scipy >=1.2
     - sympy
-    - xorg-libxext  # [linux and py27]
+    - xorg-libxext           # [linux and py27]
 
 test:
   imports:
