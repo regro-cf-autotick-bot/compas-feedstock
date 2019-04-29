@@ -1,8 +1,8 @@
 {% set name = "COMPAS" %}
-{% set version = "0.6.0" %}
+{% set version = "0.6.1" %}
 {% set file_ext = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash_value = "529cc453328dc7e27554cd93d8c6308e05c2f2cf8eedc6ab4b0619b3a4db8144" %}
+{% set hash_value = "7dc6fa12dde092965036c54a0cb4a017593bb800e575883636d463396fd78088" %}
 
 package:
   name: {{ name|lower }}
@@ -14,7 +14,7 @@ source:
   {{ hash_type }} : {{ hash_value }}
 
 build:
-  number: 0
+  number: 1
   script:
     - {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
 
@@ -30,10 +30,10 @@ requirements:
     - matplotlib >=2.2       # [not py2k]
     - networkx
     - numba
-    - numpy >=1.16
+    - numpy >=1.15
     - pillow
     - python-planarity
-    - scipy >=1.2
+    - scipy >=1.1
     - sympy
     - xorg-libxext           # [linux and py27]
 
