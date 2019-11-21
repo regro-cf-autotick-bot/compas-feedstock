@@ -14,7 +14,7 @@ source:
   {{ hash_type }} : {{ hash_value }}
 
 build:
-  number: 0
+  number: 1
   script:
     - {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
 
@@ -27,7 +27,8 @@ requirements:
     - cython
     - python
     - matplotlib >=2.2,<3.0  # [py2k]
-    - matplotlib >=2.2,<3.1  # [not py2k]
+    - matplotlib >=2.2,<3.1  # [win and not py2k]
+    - matplotlib >=2.2  # [not win and not py2k]
     - networkx
     - numba
     - numpy >=1.15
