@@ -24,7 +24,9 @@ requirements:
     - pip
     - setuptools
   run:
+    - binaryornot
     - cython
+    - ezdxf
     - python
     - matplotlib >=2.2,<3.0  # [py2k]
     - matplotlib >=2.2,<3.1  # [win and not py2k]
